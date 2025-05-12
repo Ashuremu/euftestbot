@@ -390,9 +390,19 @@ async function handleDestinationSelection(messageObj) {
             ['Cancel']
         ]
     );
+
     
-    
-    context.state = STATES.PAYMENT_CONFIRMATION;
+    switch (selectedDestination) {
+        case 'Proceed to payment':
+            context.state = STATES.PAYMENT_CONFIRMATION;
+            break;
+        case 'Change Destination':
+            context.state = STATES.DESTINATION_SELECTION;
+            break;
+        case 'Cancel':
+            context.state = STATES.SERVICE_SELECTION;
+            break;
+    }
 }
 
 async function handleViewOwnedTickets(messageObj) {
