@@ -391,6 +391,7 @@ async function handleDestinationSelection(messageObj) {
         ]
     );
     
+    
     context.state = STATES.PAYMENT_CONFIRMATION;
 }
 
